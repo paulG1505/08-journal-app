@@ -2,6 +2,7 @@ import { types } from "../types/types"
 import {firebase, googleProvider} from '../firebase/firebase-config'
 import { uiFinishLoading, uiStartLoading } from "./ui"
 import Swal from 'sweetalert2'
+import { noteLogout } from "./notes"
 
 
 //generando accion asincrona
@@ -65,6 +66,7 @@ export const starLogout=()=>{
     return async(dispatch)=>{
         await firebase.auth().signOut();
         dispatch(logout())//restablece el estado
+        dispatch(noteLogout())
     }
 }
 

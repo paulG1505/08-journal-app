@@ -16,10 +16,10 @@ export const RegisterScreen = () => {
     const {msgError} = useSelector( state => state.ui );
 
     const [values, handleInputChange] = useForm({
-        email: 'g@gmail.com',
-        password: '123456',
-        password2:'123456',
-        name:'Paul',
+        email: '',
+        password: '',
+        password2:'',
+        name:'',
     })
     
     const {email,password,password2,name}=values
@@ -60,7 +60,9 @@ export const RegisterScreen = () => {
             
                 
 
-            <form onSubmit={hadleRegister}>
+            <form 
+            className="animate__animated animate__fadeIn animate_faster"
+            onSubmit={hadleRegister}>
             <input
                     type="text"
                     placeholder="Name"
