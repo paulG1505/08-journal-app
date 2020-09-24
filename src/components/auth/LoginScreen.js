@@ -2,9 +2,9 @@ import React from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom'
 import validator from 'validator';
-import {  startGoogleLogin, startLogin } from '../action/action';
-import { removeError, setError } from '../action/ui';
-import { useForm } from '../hooks/useForm'
+import {  startGoogleLogin, startLogin } from '../../action/action';
+import { removeError, setError } from '../../action/ui';
+import { useForm } from '../../hooks/useForm'
 
 export const LoginScreen = () => {
     //hook de dispatch

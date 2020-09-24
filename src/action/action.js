@@ -9,7 +9,7 @@ import { noteLogout } from "./notes"
 export const startLogin=(email, password)=>{
     return(dispatch)=>{
         dispatch(uiStartLoading())
-       firebase.auth().signInWithEmailAndPassword(email,password)
+        return firebase.auth().signInWithEmailAndPassword(email,password)
 
        .then(({user})=>{
            dispatch(login(user.uid,user.displayName))
@@ -34,7 +34,7 @@ export const startGoogleLogin=()=>{
         })
     }
 }
-//login with email register
+//login with email "register es register"
 export const startLoginWithEmail=(email,password,name)=>{
     return(dispatch)=>{
         firebase.auth().createUserWithEmailAndPassword(email,password)

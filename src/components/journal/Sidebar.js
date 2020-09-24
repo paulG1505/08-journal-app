@@ -1,7 +1,7 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { starLogout } from '../action/action';
-import { startNewNote } from '../action/notes';
+import { starLogout } from '../../action/action';
+import { startNewNote } from '../../action/notes';
 import { JournalEntries } from './JournalEntries'
 
 export const Sidebar = () => {

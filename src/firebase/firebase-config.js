@@ -1,26 +1,46 @@
 import firebase from 'firebase/app'
 import 'firebase/firestore'
 import 'firebase/auth'
-
 const firebaseConfig = {
-    apiKey: "AIzaSyC7M5cyzXrV5xSd08j6XTvj2GDZ79hfE_A",
-    authDomain: "react-curso-fb29a.firebaseapp.com",
-    databaseURL: "https://react-curso-fb29a.firebaseio.com",
-    projectId: "react-curso-fb29a",
-    storageBucket: "react-curso-fb29a.appspot.com",
-    messagingSenderId: "970276927340",
-    appId: "1:970276927340:web:571919a6fa6ca27a2ae549",
-    measurementId: "G-NM7XYCBPNN"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  //referencia a la base de datos
-  const db = firebase.firestore()
-  //referencia al auth(puede ser varias)
-  var googleProvider = new firebase.auth.GoogleAuthProvider();
+    apiKey:process.env.REACT_APP_apiKey,
+    authDomain:process.env.REACT_APP_authDomain,
+    databaseURL:process.env.REACT_APP_databaseURL,
+    projectId:process.env.REACT_APP_projectId,
+    storageBucket:process.env.REACT_APP_storageBucket,
+    messagingSenderId:process.env.REACT_APP_messagingSenderId,
+    appId:process.env.REACT_APP_appId,
+    measurementId:process.env.REACT_APP_measurementId,
+};
+// //para testing usamos otra base de datos(mira variables de entorno)
+// const firebaseConfigTesting = {
+//     apiKey: "AIzaSyCwngfRDv56ILjsUj6dxyvBQRM-MuFrcWg",
+//     authDomain: "test-appreact.firebaseapp.com",
+//     databaseURL: "https://test-appreact.firebaseio.com",
+//     projectId: "test-appreact",
+//     storageBucket: "test-appreact.appspot.com",
+//     messagingSenderId: "392050295203",
+//     appId: "1:392050295203:web:03941c7ec4adb85c091a16",
+//     measurementId: "G-ME6QN4ZR7B"
+// };
+// //si estamos en testing usamos una o sino la otra
+// if (process.env.NODE_ENV === 'test') {
+//     firebase.initializeApp(firebaseConfigTesting)
 
-  export{
-      db,
-      googleProvider,
-      firebase
-  }
+// } else {
+
+//     // Initialize Firebase
+//     firebase.initializeApp(firebaseConfig);
+// }
+
+firebase.initializeApp(firebaseConfig);
+
+//referencia a la base de datos
+const db = firebase.firestore()
+//referencia al auth(puede ser varias)
+var googleProvider = new firebase.auth.GoogleAuthProvider();
+
+export {
+    db,
+    googleProvider,
+    firebase
+}

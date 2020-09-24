@@ -1,6 +1,6 @@
 import React from 'react'
 import moment from 'moment'
-import { activeNote } from '../action/notes';
+import { activeNote } from '../../action/notes';
 import { useDispatch } from 'react-redux';
 
 
@@ -21,7 +21,7 @@ export const JournalEntry = ({ id, date, title, body, url }) => {
             {   //si el url es diferente de undefined
                 url &&
                 <div className="journal__entry-picture"
-
+                        
                     style={{
                         backgroundSize: 'cover',
                         backgroundImage: `url(${url})`

@@ -4,15 +4,15 @@ export const setError=(err)=>({
     type: types.uiSetError,
     payload: err,
 })
-export const removeError=(err)=>({
+export const removeError=()=>({
     type: types.uiRemove
 })
-export const uiStartLoading=(err)=>({
+export const uiStartLoading=()=>({
     type: types.uiStartLoading,
     payload:true
 })
 
-export const uiFinishLoading=(err)=>({
+export const uiFinishLoading=()=>({
     type: types.uiFinishLoading,
     payload:false,
 })
