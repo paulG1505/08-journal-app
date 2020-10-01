@@ -58,7 +58,7 @@ export const LoginScreen = () => {
             }
 
                 <input
-                    type="text"
+                    type="email"
                     placeholder="Email"
                     name="email"
                     className="auth__input"
